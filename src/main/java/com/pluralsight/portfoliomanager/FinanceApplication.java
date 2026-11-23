@@ -21,8 +21,7 @@ public class FinanceApplication {
 
         // try to deposit money into both accounts
         account1.deposit(new BigDecimal("100"));
+        account1.getValue();
         // account2.deposit(new BigDecimal("100"));
-        // the deposit method is not working for account2
-        // because Valuable doesn't have a deposit method
     }
 }
