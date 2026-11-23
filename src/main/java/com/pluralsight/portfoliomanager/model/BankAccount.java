@@ -1,6 +1,7 @@
 package com.pluralsight.portfoliomanager.model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class BankAccount extends Account {
 
@@ -9,10 +10,10 @@ public class BankAccount extends Account {
     }
 
     public void deposit(BigDecimal amount) {
-        // TODO: add the amount to the balance
+        setBalance(getBalance().add(amount).setScale(2, RoundingMode.HALF_UP));
     }
 
     public void withdraw(BigDecimal amount) {
-        // TODO: take the amount out of the balance
+        setBalance(getBalance().subtract(amount).setScale(2, RoundingMode.HALF_UP));
     }
 }
