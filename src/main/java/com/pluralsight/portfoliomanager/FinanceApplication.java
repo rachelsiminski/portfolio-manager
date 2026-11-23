@@ -3,6 +3,9 @@ package com.pluralsight.portfoliomanager;
 import com.pluralsight.portfoliomanager.model.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class FinanceApplication {
 
@@ -23,5 +26,9 @@ public class FinanceApplication {
         account1.deposit(new BigDecimal("100"));
         account1.getValue();
         // account2.deposit(new BigDecimal("100"));
+
+        LocalDateTime dateTime = LocalDateTime.now();
+
+        System.out.println(dateTime.getHour());
     }
 }
