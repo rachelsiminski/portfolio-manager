@@ -1,5 +1,6 @@
 package com.pluralsight.portfoliomanager.model;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -40,7 +41,7 @@ public class Portfolio {
     }
 
     public double getValue() {
-        double sum = assets.get(0).getValue().doubleValue();
+        double sum = 0;
         for (Valuable asset : assets) {
             sum += asset.getValue().doubleValue();
         }
