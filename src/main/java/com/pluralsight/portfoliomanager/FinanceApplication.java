@@ -36,7 +36,7 @@ public class FinanceApplication {
         portfolio.add(asset3);
 
         for (Valuable asset : portfolio.getAssets()) {
-
+            System.out.println(asset.getValue());
         }
     }
 }
