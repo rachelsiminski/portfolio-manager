@@ -46,4 +46,17 @@ public class Portfolio {
         }
         return lowestValue;
     }
+
+    public Valuable filterAssetsList() {
+        Valuable highestValue = assets.get(0);
+        Valuable lowestValue = assets.get(0);
+
+        for (Valuable asset : assets) {
+            if (asset.getValue().compareTo(highestValue.getValue()) > 0) {
+                highestValue = asset;
+            } else if (asset.getValue().compareTo(lowestValue.getValue()) < 0) {
+                lowestValue = asset;
+            }
+        }
+    }
 }
