@@ -15,6 +15,26 @@ public class Portfolio {
         assets = new ArrayList<Valuable>();
     }
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Valuable> getAssets() {
+        return assets;
+    }
+
     public void add(Valuable valuable) {
         assets.add(valuable);
     }
@@ -45,18 +65,5 @@ public class Portfolio {
             }
         }
         return lowestValue;
-    }
-
-    public Valuable filterAssetsList() {
-        Valuable highestValue = assets.get(0);
-        Valuable lowestValue = assets.get(0);
-
-        for (Valuable asset : assets) {
-            if (asset.getValue().compareTo(highestValue.getValue()) > 0) {
-                highestValue = asset;
-            } else if (asset.getValue().compareTo(lowestValue.getValue()) < 0) {
-                lowestValue = asset;
-            }
-        }
     }
 }

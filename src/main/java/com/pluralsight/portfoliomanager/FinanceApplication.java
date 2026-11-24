@@ -26,5 +26,17 @@ public class FinanceApplication {
         account1.deposit(new BigDecimal("100"));
         account1.getValue();
         // account2.deposit(new BigDecimal("100"));
+
+        Valuable asset1 = new BankAccount(1, "Tyler", new BigDecimal("1000000000"));
+        Valuable asset2 = new BankAccount(2, "Atti", new BigDecimal("10000000000"));
+        Valuable asset3 = new BankAccount(3, "Frankie", new BigDecimal("10000"));
+        Portfolio portfolio = new Portfolio("Family", "Tyler");
+        portfolio.add(asset1);
+        portfolio.add(asset2);
+        portfolio.add(asset3);
+
+        for (Valuable asset : portfolio.getAssets()) {
+
+        }
     }
 }
