@@ -38,5 +38,6 @@ public class FinanceApplication {
         for (Valuable asset : portfolio.getAssets()) {
             System.out.println(asset.getValue());
         }
+        System.out.println(portfolio.getLeastValuable().getValue());
     }
 }

@@ -1,7 +1,7 @@
 package com.pluralsight.portfoliomanager.model;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Portfolio {
@@ -48,22 +48,16 @@ public class Portfolio {
     }
 
     public Valuable getMostValuable() {
-        Valuable highestValue = assets.get(0);
-        for (Valuable asset : assets) {
-            if (asset.getValue().compareTo(highestValue.getValue()) > 0) {
-                highestValue = asset;
-            }
-        }
-        return highestValue;
+        sortList();
+        return assets.get(assets.size() - 1);
     }
 
     public Valuable getLeastValuable() {
-        Valuable lowestValue = assets.get(0);
-        for (Valuable asset : assets) {
-            if (asset.getValue().compareTo(lowestValue.getValue()) < 0) {
-                lowestValue = asset;
-            }
-        }
-        return lowestValue;
+        sortList();
+        return assets.get(0);
+    }
+
+    public void sortList() {
+        assets.sort(Comparator.comparing(Valuable::getValue));
     }
 }
